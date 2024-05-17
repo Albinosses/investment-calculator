@@ -6,17 +6,17 @@ const UserInput = ({ values, onInputChange }) => {
     <div id="user-input">
       <div className="input-group">
         <InputField
-          value={values.initial_investment}
+          value={values.initialInvestment}
           onInputChange={(value) => {
-            onInputChange("initial_investment", value);
+            onInputChange("initialInvestment", value);
           }}
         >
           Initial investment
         </InputField>
         <InputField
-          value={values.annual_investment}
+          value={values.annualInvestment}
           onInputChange={(value) => {
-            onInputChange("annual_investment", value);
+            onInputChange("annualInvestment", value);
           }}
         >
           Annual investment
@@ -24,9 +24,9 @@ const UserInput = ({ values, onInputChange }) => {
       </div>
       <div className="input-group">
         <InputField
-          value={values.expected_return}
+          value={values.expectedReturn}
           onInputChange={(value) => {
-            onInputChange("expected_return", value);
+            onInputChange("expectedReturn", value);
           }}
         >
           Expected return
