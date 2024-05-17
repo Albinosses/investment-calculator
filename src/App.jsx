@@ -4,32 +4,35 @@ import { useState } from "react";
 import Result from "./components/Result";
 
 const INITIAL_STATE = {
-  initialInvestment: "",
-  annualInvestment: "",
-  expectedReturn: "",
-  duration: "",
+  initialInvestment: 10000,
+  annualInvestment: 1200,
+  expectedReturn: 6,
+  duration: 10,
 };
 
 function App() {
   const [values, setValues] = useState(INITIAL_STATE);
 
-  const onInputChange = (key, value) => {
-    const numericValue = parseFloat(value);
+  const inputIsValid = values.duration >= 1;
 
+  const onInputChange = (key, value) => {
     setValues((prevValues) => {
       return {
         ...prevValues,
-        [key]: numericValue,
+        [key]: +value,
       };
     });
   };
 
   return (
-    <div>
+    <>
       <Header />
       <UserInput values={values} onInputChange={onInputChange} />
-      <Result values={values} />
-    </div>
+      {!inputIsValid && (
+        <p className="center">Please, enter duration greater than zero</p>
+      )}
+      {inputIsValid && <Result values={values} />}
+    </>
   );
 }
 

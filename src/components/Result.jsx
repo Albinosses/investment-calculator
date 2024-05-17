@@ -19,11 +19,10 @@ const Result = ({ values }) => {
       <tbody>
         {investmentsResults &&
           investmentsResults.map((item) => {
-            console.log(item);
             totalInterest += item.interest;
             investedCapital += item.annualInvestment;
             return (
-              <tr>
+              <tr key={item.year}>
                 <td>{item.year}</td>
                 <td>{formatter.format(item.valueEndOfYear)}</td>
                 <td>{formatter.format(item.interest)}</td>

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const UserInput = ({ values, onInputChange }) => {
   return (
-    <div id="user-input">
+    <section id="user-input">
       <div className="input-group">
         <InputField
           value={values.initialInvestment}
@@ -40,7 +40,7 @@ const UserInput = ({ values, onInputChange }) => {
           Duration
         </InputField>
       </div>
-    </div>
+    </section>
   );
 };
 
